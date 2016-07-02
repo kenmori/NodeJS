@@ -6,8 +6,13 @@
 var http = require('http');
 
 var server = http.createServer(function(req, res){
-   res.write('Hello');
-   res.end();
+   var url = 'http://kenjimorita.jp';
+   var body = '<p>ifafafa' + url + '</p>';
+   res.setHeader('Location', url);
+   res.setHeader('Content-Length', body.length);
+   res.setHeader('Content-Type', 'text/html');
+   res.statusCode = 302;
+   res.end(body);
 })
 
 server.listen(3000);
