@@ -1,3 +1,6 @@
-var events = require('event')
-
-console.log(events);
+var http = require('http');
+var server = http.createServer(function(req, res){
+    res.write('Hello World');
+    res.end();
+})
+server.listen(3000);//bind to port, リクエストの着信を監視
