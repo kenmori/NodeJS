@@ -9,3 +9,4 @@ var fs = require('fs');
 var resolve = require('path').resolve();
 console.log(resolve);
 console.log(__dirname);
+
