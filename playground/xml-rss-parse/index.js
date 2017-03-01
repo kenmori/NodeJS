@@ -9,7 +9,7 @@ var xml = `
 `;
 //XMLをparse
 parseString(xml, function(err, result){
-    console.log(JSON.stringify(result));
+    console.dir(JSON.stringify(result));
 })
 //attribute is "$"
 //element content is "_"
