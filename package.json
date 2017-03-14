@@ -8,8 +8,11 @@
   },
   "devDependencies": {
     "cheerio-httpcli": "^0.6.11",
+    "comma-separated-values": "^3.6.4",
     "events": "^1.1.1",
+    "exec": "^0.2.1",
     "http": "0.0.0",
+    "iconv": "^2.2.1",
     "path": "^0.12.7",
     "request": "^2.79.0",
     "url": "^0.11.0",
