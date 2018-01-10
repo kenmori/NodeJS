@@ -9,6 +9,7 @@ function getFromClient(request, response){
         response.end();
     });
 }
+
 var server = http.createServer(getFromClient);
 
 server.listen(3000);
