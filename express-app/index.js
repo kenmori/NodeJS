@@ -3,8 +3,11 @@ var ejs = require('ejs');
 var app = express();
 
 app.engine('ejs', ejs.renderFile);
+app.use(express.static('public'));
+
 app.get('/', (req, res) => {
-    res.render('index.ejs', {title: 'Index', content:'This is Express-app Top page!'});
+    var msg = 'This is Express Page!<br>' + 'これは スタイルシートを利用した例です';
+    res.render('index.ejs', {title: 'Index', content: msg});
 });
 
 app.listen(3000, ()=> {
