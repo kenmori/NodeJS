@@ -3,15 +3,27 @@
   <head>
     <title><%= title %></title>
     <link rel='stylesheet' href='/stylesheets/style.css' />
+    <script src='/javascripts/jquery.min.js'></script>
+    <script>
+      $(document).ready(function(){
+        $('#btn').click(function(){
+          var n = $('#num').val();
+          $.getJSON("/ajax?id=" + n, function(json){
+            var msg = '<table>' + '<tr><th>名前</th>' + json.name + '<br>' +  json.age + '<br>' + json.mail + '<br>';
+            $('#msg').html(msg);
+          });
+
+        });
+      });
+    
+    </script>
   </head>
   <body>
     <h1><%= title %></h1>
     <p>Welcome to <%= title %></p>
-    <p> <%= content %></p>
-    <form action="/hello/post" method="post">
-      <input type="text" name="message">
-      <input type="submit" name="send">
-    </form>
+   id: <input id="num" type="text">
+   <div id="msg"><%= content %></div>
+   <input id="btn" type="button" value="get">
   </body>
 </html>
 

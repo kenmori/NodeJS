@@ -13,13 +13,10 @@ var session_opt = {
   cookie: {maxAge: 60 * 60 * 1000}
 };
 
-
-
-
-
 var index = require('./routes/index');
 var users = require('./routes/users');
 var hello = require('./routes/hello');
+var ajax = require('./routes/ajax');
 
 var app = express();
 
@@ -38,6 +35,7 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', index);
+app.use('/ajax', ajax);
 app.use('/users', users);
 app.use('/hello', hello);
 
